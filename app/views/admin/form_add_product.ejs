@@ -1,0 +1,34 @@
+<!-- This Page is a Form for Adding new Products -->
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>New Product Form</title>
+		</head>
+	<body>
+
+		<h1>Add New Product</h1>
+		<br>
+
+		<form action="/product/add" method="post">
+			<label>Título</label>
+			<br>
+			<input type="text" id="title" name="title" placeholder="Product Title"/>
+			<br><br>
+			<label >Description</label>
+			<br>
+			<textarea id="description" name="description" rows='5' cols="30" ></textarea>
+			<br>
+			<label>Price</label>
+			<br>
+			<input type="number" id="price" name="price" step=".01" placeholder="Product Price"/>
+			<br><br>
+			<label>Category</label>
+			<br>
+			<input type="text" id="category" name="category" placeholder="Product Category"/>
+			<br><br>
+			<input type="submit" value="Enviar"/>
+		</form>
+
+	</body>
+</html>

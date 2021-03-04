@@ -1,0 +1,32 @@
+<!-- This Page Shows only one Product by its ID  -->
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Product</title>
+		</head>
+	<body>
+
+		<h1>Product</h1>
+		<table>
+			<tr>
+				<td>Title</td>
+				<td>Description</td>
+				<td>Price</td>
+				<td>Category</td>
+			</tr>
+			<tr>
+				<!-- EJS, Javascript on html file without script tag -->
+				<td><%= product[0].title%></td>
+				<td><%= product[0].description%></td>
+				<td><%= product[0].price%></td>
+				<td><%= product[0].category%></td>
+				<td><button><a href="/update_product/<%= product[0].id_product%>">Update product</a></button></td>
+				<td><button><a href="/delete_product/<%= product[0].id_product%>">Delete product</a></button></td>
+				
+			</tr>
+			
+		</table>
+
+	</body>
+</html>

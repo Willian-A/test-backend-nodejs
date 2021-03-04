@@ -1,0 +1,41 @@
+<!-- This Page Shows All Products from Database -->
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Products</title>
+		</head>
+	<body>
+
+		<h1>Products List</h1>
+		<form action="/search" method="post">
+            <input type="text" name="query" />
+            <input type="submit" value="Search" />
+        </form>
+		<table>
+			<!-- EJS, Javascript on html file without script tag -->
+			<% if(error) { %>
+				<h3><%= error%> <button><a href="/products">Return</a></button></h3>
+			<% } else {%>
+				<tr>
+					<td>Title</td>
+					<td>Description</td>
+					<td>Price</td>
+					<td>Category</td>
+				</tr>
+				<% for(let i = 0; i < products.length; i++) { %>
+					<tr>
+						<td><%= products[i].title%></td>
+						<td><%= products[i].description%></td>
+						<td><%= products[i].price%></td>
+						<td><%= products[i].category%></td>
+						<td><button><a href="/product/<%= products[i].id_product%>">See product</a></button></td>
+					</tr>
+				<% }%>
+			<% }%>
+			<br>
+			<button><a href="/add_product">Add new product</a></button>
+		</table>
+
+	</body>
+</html>
